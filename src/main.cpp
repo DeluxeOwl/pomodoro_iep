@@ -1,7 +1,13 @@
 #include <iostream>
+#include <../headers/hello.hpp>
 
-int main()
-{
-    std::cout << "Hello world" << std::endl;   
+int main() {
+    hello::Hello hello{};
+    
+    hello.start();
+    
+    hello.run();
+    
+    hello.stop();  
     return 0;
 }
