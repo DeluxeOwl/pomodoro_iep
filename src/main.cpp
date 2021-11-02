@@ -1,5 +1,5 @@
 #include <iostream>
-#include <../headers/hello.hpp>
+#include "../headers/hello.hpp"
 
 int main() {
     hello::Hello hello{};
