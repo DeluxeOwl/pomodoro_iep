@@ -10,14 +10,27 @@ public:
     Pomodoro();
     
     ~Pomodoro() = default;
-    std::string timeMesage;
     
 public:
-    void start();
+    void fromFile(const std::string &path);
     
     void run();
     
     void stop();
+private:
+    // RAII
+    std::string urgency = "low";
+    std::string summary = "sample summary";
+    std::string body = "sample body";
+    std::string title = "sample title";
+    std::string icon = "";
+    std::string time = "30";
+
+    std::string exec(const char* cmd);
+
+    Pomodoro(const Pomodoro&);
+    Pomodoro& operator=(const Pomodoro&);
+
 };
 
 } 
