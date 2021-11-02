@@ -25,6 +25,7 @@ private:
     std::string title = "sample title";
     std::string icon = "";
     std::string time = "30";
+    int stop_after = 3;
 
     std::string exec(const char* cmd);
 

@@ -52,6 +52,9 @@ void Pomodoro::fromFile(const std::string &path)
             this->time=optiune;
             this->time.pop_back();
         }
+        if(token.compare("stop_after") == 0) {
+            this->stop_after=stoi(optiune);
+        }
 
     }
     configFile.close();
@@ -59,7 +62,7 @@ void Pomodoro::fromFile(const std::string &path)
 
 void Pomodoro::run()
 {
-    std::cout << this->time << std::endl;
+    std::cout << "Running every " << this->time << " seconds" << std::endl;
 
     std::string cmd = 
         "notify-send --urgency " + 
@@ -69,11 +72,11 @@ void Pomodoro::run()
         "-a " + "\"" + this->title + "\"" + " " +
         "-i " + "\"" + this->icon + "\"";
 
-    std::cout << cmd << std::endl;
-
     const char *c = cmd.c_str();
-    this->exec(c);
-    sleep(2);
+    for(int i=0; i < this->stop_after; i++) {
+        this->exec(c);
+        sleep(stoi(this->time));
+    }
 }
 
 std::string Pomodoro::exec(const char* cmd) {
@@ -91,7 +94,7 @@ std::string Pomodoro::exec(const char* cmd) {
 
 void Pomodoro::stop()
 {    
-    std::cout << std::endl << "Byeee!" << std::endl;
+    std::cout << std::endl << "Done, stopped after " << this-> stop_after << " runs!" << std::endl;
 }
 
 
