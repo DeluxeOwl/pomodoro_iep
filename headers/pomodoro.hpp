@@ -18,7 +18,7 @@ public:
     
     void stop();
 private:
-    // RAII
+    // initializare
     std::string urgency = "low";
     std::string summary = "sample summary";
     std::string body = "sample body";

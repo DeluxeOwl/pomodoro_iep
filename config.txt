@@ -3,4 +3,4 @@ summary=Break time!
 body=Time to take a break, you've been at it long enough
 title=Pomodoro break
 icon=/home/watcher/Pictures/index.png
-time=5s
+time=3s
