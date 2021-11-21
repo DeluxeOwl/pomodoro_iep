@@ -19,6 +19,24 @@ Pomodoro::Pomodoro()
 {
     version();
 }
+
+Pomodoro& Pomodoro::operator=(const Pomodoro &other) {
+
+    if(this == &other) {
+        std::cout << "Uh-oh, tried to do a self-assignment 😢" << std::endl;
+        return *this;
+    }
+    std::cout << "Called assignment operator 🤙" << std::endl;
+
+    body = other.body;
+    title = other.title;
+    icon = other.icon;
+    time = other.time;
+    urgency = other.urgency;
+    summary = other.summary;
+
+    return *this;
+}
     
 void Pomodoro::fromFile(const std::string &path)
 {

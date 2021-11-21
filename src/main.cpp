@@ -9,8 +9,13 @@ int main() {
 
     pomodoro.fromFile("./config.txt");
     
-    pomodoro.run();
+    pomodoro::Pomodoro copy{};
+    copy = pomodoro;
+
+    pomodoro = pomodoro;
+
+    copy.run();
     
-    pomodoro.stop();
+    copy.stop();
     return 0;
 }

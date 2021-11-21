@@ -10,7 +10,8 @@ public:
     Pomodoro();
     
     ~Pomodoro() = default;
-    
+    Pomodoro& operator=(const Pomodoro &);
+
 public:
     void fromFile(const std::string &path);
     
@@ -18,6 +19,9 @@ public:
     
     void stop();
 private:
+
+
+    std::string exec(const char* cmd);
     // initializare
     std::string urgency = "low";
     std::string summary = "sample summary";
@@ -26,12 +30,7 @@ private:
     std::string icon = "";
     std::string time = "30";
     int stop_after = 3;
-
-    std::string exec(const char* cmd);
-
-    Pomodoro(const Pomodoro&);
-    Pomodoro& operator=(const Pomodoro&);
-
+    
 };
 
 } 
