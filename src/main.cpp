@@ -10,6 +10,26 @@ Pomodoro* createPomodoro() {
     return new Pomodoro();
 }
 
+void lock(Pomodoro &pomLock) {
+    std::cout << "Locking Pomodoro 🔒";
+    pomLock.setIsLocked(true);
+}
+void unlock(Pomodoro &pomLock) {
+    std::cout << "Unlocking Pomodoro 🔓";
+    pomLock.setIsLocked(false);
+}
+
+class LockManager{
+    private:
+        Pomodoro &pomLock;
+    public:
+        LockManager(Pomodoro &p) : pomLock(p) {
+            lock(pomLock);
+        }
+        ~LockManager() {
+            unlock(pomLock);
+        }
+};
 
 int main() {
     // std::cout<<"Memory leak inc ... 🚰"
@@ -34,5 +54,14 @@ int main() {
     // // std::unique_ptr<Pomodoro> pPomUnique2(pPomUnique); // eroare, nu permite copiere
     // std::unique_ptr<Pomodoro> pPomUnique2 = move(pPomUnique);
     // pPomUnique2->run();
+
+    // Pomodoro pom{};
+    // pom.fromFile("./config.txt");
+
+    // LockManager *lockPom = new LockManager(pom);
+    // pom.checkLock();
+    // delete lockPom;
+    // pom.checkLock();
+    
     
 }

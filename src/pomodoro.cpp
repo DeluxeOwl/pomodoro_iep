@@ -39,7 +39,16 @@ Pomodoro& Pomodoro::operator=(const Pomodoro &other) {
 }
     
 
-
+void Pomodoro::setIsLocked(bool val) {
+    this->locked = val;
+}
+void Pomodoro::checkLock() {
+    if(this->locked == true) {
+        std::cout << "I'm locked over here ..." << std::endl;
+    } else {
+        std::cout << "I'm FREEEEEE!!! ..." << std::endl;
+    }
+}
 
 void Pomodoro::fromFile(const std::string &path)
 {

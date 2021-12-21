@@ -18,6 +18,11 @@ public:
     void run();
     
     void stop();
+
+    void setIsLocked(bool);
+
+    void checkLock();
+
 private:
 
 
@@ -30,6 +35,8 @@ private:
     std::string icon = "";
     std::string time = "30";
     int stop_after = 3;
+
+    bool locked = false;
     
 };
 
