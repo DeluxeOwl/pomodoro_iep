@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <string>
 #include <array>
-#include<unistd.h>
+#include <unistd.h>
 
 namespace pomodoro {
 
@@ -38,6 +38,9 @@ Pomodoro& Pomodoro::operator=(const Pomodoro &other) {
     return *this;
 }
     
+
+
+
 void Pomodoro::fromFile(const std::string &path)
 {
     std::cout << "Reading from:" << path << std::endl << std::endl;
@@ -114,6 +117,7 @@ void Pomodoro::stop()
 {    
     std::cout << std::endl << "Done, stopped after " << this-> stop_after << " runs!" << std::endl;
 }
+
 
 
 } // namespace pomodoro

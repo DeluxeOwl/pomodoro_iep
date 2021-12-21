@@ -4,7 +4,9 @@ A pomodoro timer in C++ that sends me notifications on my linux machine.
 
 You can set the timer and message in the config file.
 
-# reccommended usage
+Various stages of the projects **are in commits**
+
+# recommended usage
 
 create a `config.txt` file in the same directory
 
