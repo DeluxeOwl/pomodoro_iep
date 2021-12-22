@@ -44,7 +44,14 @@ int main() {
 
     // std::auto_ptr<Pomodoro> pPom2(createPomodoro());
     // std::auto_ptr<Pomodoro> pPom3(pPom2); // pPom3 pointeaza spre obiect, pPom2 e null
-    // pPom2 = pPome3 // acum invers ???
+    // if(pPom2.get() == NULL) {
+    //     std::cout<<"pPom2 null"<<std::endl;
+    // }
+    // pPom2 = pPom3; // acum invers ???
+    // if(pPom3.get() == NULL) {
+    //     std::cout<<"pPom3 null"<<std::endl;
+    // }
+    // pPom2->fromFile("./config.txt");
     // pPom2->run();
     // pPom2->stop();
 
